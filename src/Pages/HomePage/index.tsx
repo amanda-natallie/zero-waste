@@ -1,3 +1,4 @@
+import { Button, Typography } from '@vallorisolutions/foa-design-system';
 import React from 'react';
 import Tab from '../../components/Tabs/Tab';
 import Tabs from '../../components/Tabs/Tabs';
@@ -18,7 +19,23 @@ const HomePage = (): JSX.Element => {
             <Tab title="Meu Perfil">
                 <UserHome />
             </Tab>
-            <Tab title="Sair" onClick={(): void => useLogout()} />
+            <Tab title="Sair">
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        height: '100%',
+                    }}
+                >
+                    <Typography as="h5">Você está saindo do sistema.</Typography>
+                    <br />
+                    <Button onClick={(): void => useLogout()} variant="secondary" small>
+                        Sair do sistema
+                    </Button>
+                </div>
+            </Tab>
         </Tabs>
     );
 };

@@ -1,7 +1,6 @@
-import { Button, Typography } from '@vallorisolutions/foa-design-system';
+import { Typography } from '@vallorisolutions/foa-design-system';
 import React from 'react';
 import Slider from 'react-slick';
-import { useUrl } from '../../helpers/utils';
 import SearchIcon from './icons/1';
 import CheckoutIcon from './icons/2';
 import TransportIcon from './icons/3';
@@ -9,7 +8,6 @@ import StoreIcon from './icons/4';
 import { StyledIconWrapper, StyleSlideItem } from './icons/styles';
 
 const DashboardTiles = (): JSX.Element => {
-    const { navigate } = useUrl();
     const settings = {
         dots: true,
         infinite: true,
@@ -66,9 +64,6 @@ const DashboardTiles = (): JSX.Element => {
                     </Typography>
                 </StyleSlideItem>
             </Slider>
-            <Button variant="gs" style={{ marginTop: '6rem' }} onClick={(): void => navigate('/home-app')}>
-                Continuar
-            </Button>
         </>
     );
 };
