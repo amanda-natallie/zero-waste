@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FlexBox, Col, Row, Typography, colors, Avatar } from '@vallorisolutions/foa-design-system';
+import { FlexBox, Col, Row, Typography, colors, Avatar, Button } from '@vallorisolutions/foa-design-system';
 import React, { useState, useEffect } from 'react';
 import ReactLoading from 'react-loading';
 import ListItem from '../../components/ListItem';
@@ -76,11 +76,10 @@ const ProductList: React.FC = (): JSX.Element => {
                     </ul>
                 </Col>
             </Row>
-            <Tabs>
-                <Tab title="Inicio" onClick={(): void => navigate('/home-app')} />
-                <Tab title="Sair" onClick={(): void => useLogout()} />
-            </Tabs>
             <br />
+            <Typography as="small" customStyles={{ textAlign: 'center', padding: '0 50px 10px 50px' }}>
+                Dica: Clique no logotipo do header para ir para a pagina inicial
+            </Typography>
         </>
     ) : (
         <FlexBox fullScreen verticalAlign="center" horizontalAlign="center">
