@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import ReactLoading from 'react-loading';
 import ListItem from '../../components/ListItem';
 import { api } from '../../api';
+import { randomImg } from '../../helpers/utils';
 
 const MaterialList: React.FC = (): JSX.Element => {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,10 +26,7 @@ const MaterialList: React.FC = (): JSX.Element => {
     useEffect(() => {
         fetchCompanies();
     }, []);
-    const randomImg = (): string => {
-        const img = Math.floor(Math.random() * 10) + 1;
-        return `https://picsum.photos/300/200?image=${img}`;
-    };
+
     return !isLoading ? (
         <Row
             customStyles={{

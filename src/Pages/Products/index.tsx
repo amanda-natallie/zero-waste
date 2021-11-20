@@ -7,7 +7,7 @@ import { api } from '../../api';
 import { CustomCard } from '../UserHome/styles';
 import Tab from '../../components/Tabs/Tab';
 import Tabs from '../../components/Tabs/Tabs';
-import { useLogout, useUrl } from '../../helpers/utils';
+import { randomImg, useLogout, useUrl } from '../../helpers/utils';
 
 const ProductList: React.FC = (): JSX.Element => {
     const { navigate } = useUrl();
@@ -36,6 +36,7 @@ const ProductList: React.FC = (): JSX.Element => {
             <Row
                 customStyles={{
                     width: '100vw',
+                    overflowY: 'auto',
                 }}
             >
                 <Col size={12}>
@@ -66,10 +67,10 @@ const ProductList: React.FC = (): JSX.Element => {
                         {materials &&
                             materials.map((material: any) => (
                                 <ListItem
-                                    key={material.id}
-                                    title={material.name}
-                                    subtitle={material.description}
-                                    image={material.image}
+                                    key={material.uuid}
+                                    title={material.nome}
+                                    subtitle={`Qty: ${material.quantidade} / R$${material.preco}`}
+                                    image={randomImg()}
                                 />
                             ))}
                     </ul>

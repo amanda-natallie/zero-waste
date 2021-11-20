@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { ReactElement } from 'react';
-import { StyledTabLi, StyledTabUl } from './styles';
+import { StyledTabUl } from './styles';
 import TabTitle from './TabTitle';
-import { FiLogOut } from 'react-icons/fi';
 
 type Props = {
     children: ReactElement[];

@@ -39,3 +39,8 @@ export const uuid10 = (): string => {
     const random = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
     return random.toString();
 };
+
+export const randomImg = (): string => {
+    const img = Math.floor(Math.random() * 10) + 1;
+    return `https://picsum.photos/300/200?image=${img}`;
+};
