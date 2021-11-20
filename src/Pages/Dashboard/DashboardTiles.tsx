@@ -64,6 +64,11 @@ const DashboardTiles = (): JSX.Element => {
                     </Typography>
                 </StyleSlideItem>
             </Slider>
+            <br />
+            <br />
+            <Typography as="small" customStyles={{ textAlign: 'center' }}>
+                Dica: Clique no logotipo do header para ir para a pagina inicial
+            </Typography>
         </>
     );
 };

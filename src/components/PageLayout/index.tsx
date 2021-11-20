@@ -6,10 +6,12 @@ import ZWBrand from '../../icons/logo';
 import { StyledLayoutWrapper } from './styles';
 import { FiLogOut } from 'react-icons/fi';
 import { StyledIconWrapper } from '../../Pages/Dashboard/icons/styles';
+import { useUrl } from '../../helpers/utils';
 
 const PageLayout: React.FC = ({ children }): JSX.Element => {
     const [isLoading] = useState(false);
     const { location } = useHistory();
+    const { navigate } = useUrl();
     console.log(location.pathname);
     return !isLoading ? (
         <StyledLayoutWrapper>
@@ -23,7 +25,10 @@ const PageLayout: React.FC = ({ children }): JSX.Element => {
                 }}
             >
                 <Col size={6} customStyles={{ marginBlock: 10 }}>
-                    <StyledIconWrapper style={{ height: 50, width: 50, float: 'left', marginLeft: 20 }}>
+                    <StyledIconWrapper
+                        style={{ height: 50, width: 50, float: 'left', marginLeft: 20 }}
+                        onClick={() => navigate('/home-app')}
+                    >
                         <ZWBrand />
                     </StyledIconWrapper>
                 </Col>
