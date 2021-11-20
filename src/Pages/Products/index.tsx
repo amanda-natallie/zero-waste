@@ -1,16 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FlexBox, Col, Row, Typography, colors, Avatar, Button } from '@vallorisolutions/foa-design-system';
+import { FlexBox, Col, Row, Typography, colors, Avatar } from '@vallorisolutions/foa-design-system';
 import React, { useState, useEffect } from 'react';
 import ReactLoading from 'react-loading';
 import ListItem from '../../components/ListItem';
 import { api } from '../../api';
 import { CustomCard } from '../UserHome/styles';
-import Tab from '../../components/Tabs/Tab';
-import Tabs from '../../components/Tabs/Tabs';
-import { randomImg, useLogout, useUrl } from '../../helpers/utils';
+import { randomImg } from '../../helpers/utils';
 
 const ProductList: React.FC = (): JSX.Element => {
-    const { navigate } = useUrl();
     const [isLoading, setIsLoading] = useState(false);
 
     const [materials, setMaterials] = useState<any[]>([]);
